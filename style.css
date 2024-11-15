@@ -177,8 +177,6 @@ ol{
 li{
     counter-increment: deyisme;
     list-style-position: inside;
-    
-
 }
 li::before{
     content: counter(deyisme) ".";

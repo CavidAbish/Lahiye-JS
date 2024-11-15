@@ -8,11 +8,11 @@ let btn = document.querySelector(".btnimg");
 let btn1 = document.querySelector(".btnimg1");
 let plus = document.querySelector(".plus");
 ximg.addEventListener("mouseenter", (e) => {
-    ximg.src = "./Group 70.svg";
+    ximg.src = "./Layihe şekiller/Group 70.svg";
     ximg.alt = "Yeni Şəkil";
 });
 ximg.addEventListener("mouseleave", (e) => {
-    ximg.src = "./Group 77.svg";
+    ximg.src = "./Layihe şekiller/Group 77.svg";
     ximg.alt = "Yeni Şəkil";
 });
 ximg.addEventListener("click", (e) => {
@@ -23,20 +23,20 @@ ximg.addEventListener("click", (e) => {
 let queue = false;
 sirala.addEventListener("mousemove", (e) => {
     if (!queue) {
-        sirala.src = "./Group 73.svg";
+        sirala.src = "./Layihe şekiller/Group 73.svg";
         sirala.alt = "Yeni Şəkil";
     } else {
-        sirala.src = "./Group 91.svg";
+        sirala.src = "./Layihe şekiller/Group 91.svg";
         sirala.alt = "Yeni Şəkil";
     }
 });
 
 sirala.addEventListener("mouseleave", (e) => {
     if (!queue) {
-        sirala.src = "./Group 74.svg";
+        sirala.src = "./Layihe şekiller/Group 74.svg";
         sirala.alt = "Yeni Şəkil";
     } else {
-        sirala.src = "./Group 90.svg";
+        sirala.src = "./Layihe şekiller/Group 90.svg";
         sirala.alt = "Yeni Şəkil";
     }
 });
@@ -44,10 +44,10 @@ sirala.addEventListener("mouseleave", (e) => {
 sirala.addEventListener("click", (e) => {
     queue = !queue;
     if (queue) {
-        sirala.src = "./Group 90.svg";
+        sirala.src = "./Layihe şekiller/Group 90.svg";
         sirala.alt = "Yeni Şəkil";
     } else {
-        sirala.src = "./Group 74.svg";
+        sirala.src = "./Layihe şekiller/Group 74.svg";
         sirala.alt = "Yeni Şəkil";
     }
 });
@@ -65,8 +65,6 @@ btn.addEventListener("click", (e) => {
     inp.remove();
     ximg.remove();
     newDiv1.remove();
-    // divInput.style.height = "auto";
-
     btn.disabled = true;
     if (inp.value.trim() === "") {
         inp.value = "";
@@ -76,23 +74,21 @@ btn.addEventListener("click", (e) => {
     }
 
     newOl.innerHTML = "";
-
-
     for (let i = 0; i < listData.length; i++) {
         let newL = document.createElement("li");
         newL.textContent = listData[i];
         let newXimg = document.createElement("img");
-        newXimg.src = "./Group 77.svg";
+        newXimg.src = "./Layihe şekiller/Group 77.svg";
         newXimg.alt = "yeni x şəkil";
         newXimg.classList.add("yeniXimg");
         newL.append(newXimg);
         newOl.append(newL);
         newXimg.addEventListener("mouseenter", () => {
-            newXimg.src = "./Group 70.svg";
+            newXimg.src = "./Layihe şekiller/Group 70.svg";
             newXimg.alt = "Yeni alt mətn";
         });
         newXimg.addEventListener("mouseleave", () => {
-            newXimg.src = "./Group 77.svg";
+            newXimg.src = "./Layihe şekiller/Group 77.svg";
             newXimg.alt = "Yeni alt mətn";
         });
         newXimg.addEventListener("click", () => {
@@ -110,11 +106,6 @@ btn.addEventListener("click", (e) => {
     divInput.append(newDiv);
     inp.value = "";
     plus.disabled = false;
-
-
-    // divInput.style.height = `${divInput.scrollHeight}px`;
-
-
 });
 
 const parentDiv = inp.parentNode;
@@ -122,8 +113,6 @@ let parentDiv1 = ximg.parentNode;
 let parenttDiv2 = btn1.parentNode;
 
 plus.addEventListener("click", (e) => {
-    // divInput.style.height = "auto";
-
     parentDiv1.append(ximg);
     parentDiv.append(inp);
     parenttDiv2.append(btn1);
@@ -139,8 +128,6 @@ plus.addEventListener("click", (e) => {
 let sortAscending = true;
 sirala.addEventListener("click", () => {
     if (sortAscending) {
-        listData.reverse();
-    } else {
         listData.sort((a, b) => {
             if (typeof a === 'number' && typeof b === 'number') {
                 return a - b;
@@ -155,7 +142,9 @@ sirala.addEventListener("click", () => {
                 return 1;
             }
         });
-
+    } else {
+        listData.reverse();
+        
     }
     sortAscending = !sortAscending;
     console.log(listData);
@@ -165,18 +154,18 @@ sirala.addEventListener("click", () => {
         let newL = document.createElement("li");
         newL.textContent = listData[i];
         let newXimg = document.createElement("img");
-        newXimg.src = "./Group 77.svg";
+        newXimg.src = "./Layihe şekiller/Group 77.svg";
         newXimg.alt = "yeni x şəkil";
         newXimg.classList.add("yeniXimg");
         newL.append(newXimg);
         newOl.append(newL);
 
         newXimg.addEventListener("mouseenter", () => {
-            newXimg.src = "./Group 70.svg";
+            newXimg.src = "./Layihe şekiller/Group 70.svg";
             newXimg.alt = "Yeni alt mətn";
         });
         newXimg.addEventListener("mouseleave", () => {
-            newXimg.src = "./Group 77.svg";
+            newXimg.src = "./Layihe şekiller/Group 77.svg";
             newXimg.alt = "Yeni alt mətn";
         });
         newXimg.addEventListener("click", () => {
@@ -189,12 +178,7 @@ sirala.addEventListener("click", () => {
 
         });
     }
-
-
-    // divInput.style.height = `${divInput.scrollHeight}px`;
-
     btn.classList.add("buttonn")
-
 });
 
 let newDiv1 = document.createElement("div");
@@ -208,7 +192,7 @@ plus.addEventListener("click", (e) => {
         newDiv1.remove();
         newL1.remove();
     }
-    // newDiv1.style.height = "auto";
+   
 
 
     if (inp.value !== "" && !listData.includes(inp.value)) {
@@ -221,19 +205,19 @@ plus.addEventListener("click", (e) => {
         let newL1 = document.createElement("li");
         newL1.textContent = listData[i];
         let newXimg1 = document.createElement("img");
-        newXimg1.src = "./Group 77.svg";
+        newXimg1.src = "./Layihe şekiller/Group 77.svg";
         newXimg1.alt = "yeni x şəkil";
         newXimg1.classList.add("yeniXimg");
         newL1.append(newXimg1);
         newOl1.append(newL1);
 
         newXimg1.addEventListener("mouseenter", () => {
-            newXimg1.src = "./Group 70.svg";
+            newXimg1.src = "./Layihe şekiller/Group 70.svg";
             newXimg1.alt = "Yeni alt mətn";
         });
 
         newXimg1.addEventListener("mouseleave", () => {
-            newXimg1.src = "./Group 77.svg";
+            newXimg1.src = "./Layihe şekiller/Group 77.svg";
             newXimg1.alt = "Yeni alt mətn";
         });
 
@@ -261,8 +245,70 @@ plus.addEventListener("click", (e) => {
 });
 btn.addEventListener("click", () => {
     newDiv1.remove();
-
     newOl1.remove();
 })
+let sortAscending1=true;
+sirala.addEventListener("click", () => {
+    
+    if (sortAscending1) {
+        listData.sort((a, b) => {
+            if (typeof a === 'number' && typeof b === 'number') {
+                return a - b;
+            }
+            if (typeof a === 'string' && typeof b === 'string') {
+                return a.localeCompare(b);
+            }
+            if (typeof a === 'number' && typeof b === 'string') {
+                return -1;
+            }
+            if (typeof a === 'string' && typeof b === 'number') {
+                return 1;
+            }
+        });
+    } else {
+        listData.reverse();
+    }
+    sortAscending1 = !sortAscending1; 
+    console.log(listData);
+    newOl1.innerHTML = "";
 
+    for (let i = 0; i < listData.length; i++) {
+        let newL1 = document.createElement("li");
+        newL1.textContent = listData[i];
 
+        let newXimg1 = document.createElement("img");
+        newXimg1.src = "./Layihe şekiller/Group 77.svg";
+        newXimg1.alt = "yeni x şəkil";
+        newXimg1.classList.add("yeniXimg");
+
+      
+        newXimg1.addEventListener("mouseenter", () => {
+            newXimg1.src = "./Layihe şekiller/Group 70.svg";
+            newXimg1.alt = "Yeni alt mətn";
+        });
+
+        newXimg1.addEventListener("mouseleave", () => {
+            newXimg1.src = "./Layihe şekiller/Group 77.svg";
+            newXimg1.alt = "Yeni alt mətn";
+        });
+
+        newXimg1.addEventListener("click", () => {
+            const index = listData.indexOf(newL1.textContent);
+            if (index > -1) {
+                listData.splice(index, 1); 
+            }
+            newL1.remove(); 
+
+          
+            if (listData.length === 0) {
+                newDiv1.remove();
+            }
+
+            console.log(listData);
+        });
+
+       
+        newL1.append(newXimg1);
+        newOl1.append(newL1);
+    }
+});
