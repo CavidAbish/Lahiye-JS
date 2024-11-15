@@ -125,61 +125,6 @@ plus.addEventListener("click", (e) => {
     inp.style.height = "40px"
 
 });
-let sortAscending = true;
-sirala.addEventListener("click", () => {
-    if (sortAscending) {
-        listData.sort((a, b) => {
-            if (typeof a === 'number' && typeof b === 'number') {
-                return a - b;
-            }
-            if (typeof a === 'string' && typeof b === 'string') {
-                return a.localeCompare(b);
-            }
-            if (typeof a === 'number' && typeof b === 'string') {
-                return -1;
-            }
-            if (typeof a === 'string' && typeof b === 'number') {
-                return 1;
-            }
-        });
-    } else {
-        listData.reverse();
-        
-    }
-    sortAscending = !sortAscending;
-    console.log(listData);
-    newOl.innerHTML = "";
-
-    for (let i = 0; i < listData.length; i++) {
-        let newL = document.createElement("li");
-        newL.textContent = listData[i];
-        let newXimg = document.createElement("img");
-        newXimg.src = "./Layihe şekiller/Group 77.svg";
-        newXimg.alt = "yeni x şəkil";
-        newXimg.classList.add("yeniXimg");
-        newL.append(newXimg);
-        newOl.append(newL);
-
-        newXimg.addEventListener("mouseenter", () => {
-            newXimg.src = "./Layihe şekiller/Group 70.svg";
-            newXimg.alt = "Yeni alt mətn";
-        });
-        newXimg.addEventListener("mouseleave", () => {
-            newXimg.src = "./Layihe şekiller/Group 77.svg";
-            newXimg.alt = "Yeni alt mətn";
-        });
-        newXimg.addEventListener("click", () => {
-            const index = listData.indexOf(newL.textContent);
-            if (index > -1) {
-                listData.splice(index, 1);
-            }
-            newL.remove();
-            console.log(listData);
-
-        });
-    }
-    btn.classList.add("buttonn")
-});
 
 let newDiv1 = document.createElement("div");
 newDiv1.classList.add("newDiv1");
@@ -187,6 +132,7 @@ let newOl1 = document.createElement("ol");
 newOl1.classList.add("newOl1");
 
 plus.addEventListener("click", (e) => {
+    inp.focus()
     if (listData.length === 0) {
         newOl1.remove();
         newDiv1.remove();
@@ -247,68 +193,55 @@ btn.addEventListener("click", () => {
     newDiv1.remove();
     newOl1.remove();
 })
-let sortAscending1=true;
+
+let sortAscending = true;
+
 sirala.addEventListener("click", () => {
-    
-    if (sortAscending1) {
+    if (sortAscending) {
         listData.sort((a, b) => {
-            if (typeof a === 'number' && typeof b === 'number') {
-                return a - b;
-            }
-            if (typeof a === 'string' && typeof b === 'string') {
-                return a.localeCompare(b);
-            }
-            if (typeof a === 'number' && typeof b === 'string') {
-                return -1;
-            }
-            if (typeof a === 'string' && typeof b === 'number') {
-                return 1;
-            }
+            if (typeof a === 'number' && typeof b === 'number') return a - b;
+            if (typeof a === 'string' && typeof b === 'string') return a.localeCompare(b);
+            if (typeof a === 'number') return -1;
+            return 1;
         });
     } else {
         listData.reverse();
     }
-    sortAscending1 = !sortAscending1; 
-    console.log(listData);
-    newOl1.innerHTML = "";
+    sortAscending = !sortAscending;
 
-    for (let i = 0; i < listData.length; i++) {
-        let newL1 = document.createElement("li");
-        newL1.textContent = listData[i];
-
-        let newXimg1 = document.createElement("img");
-        newXimg1.src = "./Layihe şekiller/Group 77.svg";
-        newXimg1.alt = "yeni x şəkil";
-        newXimg1.classList.add("yeniXimg");
-
-      
-        newXimg1.addEventListener("mouseenter", () => {
-            newXimg1.src = "./Layihe şekiller/Group 70.svg";
-            newXimg1.alt = "Yeni alt mətn";
-        });
-
-        newXimg1.addEventListener("mouseleave", () => {
-            newXimg1.src = "./Layihe şekiller/Group 77.svg";
-            newXimg1.alt = "Yeni alt mətn";
-        });
-
-        newXimg1.addEventListener("click", () => {
-            const index = listData.indexOf(newL1.textContent);
-            if (index > -1) {
-                listData.splice(index, 1); 
-            }
-            newL1.remove(); 
-
-          
-            if (listData.length === 0) {
-                newDiv1.remove();
-            }
-
-            console.log(listData);
-        });
-
-       
-        newL1.append(newXimg1);
-        newOl1.append(newL1);
-    }
+    renderList(newOl, listData);
+    renderList(newOl1, listData);
 });
+
+function renderList(container, data) {
+    container.innerHTML = "";
+    data.forEach(item => {
+        const li = document.createElement("li");
+        li.textContent = item;
+
+        const img = document.createElement("img");
+        img.src = "./Layihe şekiller/Group 77.svg";
+        img.alt = "yeni x şəkil";
+        img.classList.add("yeniXimg");
+
+        img.addEventListener("mouseenter", () => {
+            img.src = "./Layihe şekiller/Group 70.svg";
+            img.alt = "Yeni alt mətn";
+        });
+
+        img.addEventListener("mouseleave", () => {
+            img.src = "./Layihe şekiller/Group 77.svg";
+            img.alt = "Yeni alt mətn";
+        });
+
+        img.addEventListener("click", () => {
+            const index = data.indexOf(item);
+            if (index > -1) data.splice(index, 1);
+            li.remove();
+            console.log(data);
+        });
+
+        li.append(img);
+        container.append(li);
+    });
+}
