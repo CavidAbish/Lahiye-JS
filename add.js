@@ -57,9 +57,21 @@ let newDiv = document.createElement("div");
 newDiv.classList.add("newDiv");
 let newOl = document.createElement("ol");
 newOl.classList.add("newOl")
-btn.addEventListener("click", () => {
-    btn.classList.add("buttonn")
-})
+
+inp.addEventListener("input", () => {
+    if (inp.value.trim() === "") {
+        inp.focus();
+        btn.disabled = true;
+    } else {
+        
+       btn.disabled = false;
+       
+        btn.addEventListener("click", () => {
+    btn.classList.add("buttonn");
+    
+
+});
+
 btn.addEventListener("click", (e) => {
 
     inp.remove();
@@ -107,6 +119,9 @@ btn.addEventListener("click", (e) => {
     inp.value = "";
     plus.disabled = false;
 });
+    }
+});
+
 
 const parentDiv = inp.parentNode;
 let parentDiv1 = ximg.parentNode;
