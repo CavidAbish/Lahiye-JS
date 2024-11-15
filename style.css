@@ -1,0 +1,224 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: Roboto, sans-serif;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.container {
+    width: 400px;
+   
+    border: 1px solid #C4C4C4;
+    border-radius: 15px;
+}
+
+.yellow {
+    width: 100%;
+    height: 35px;
+    background-color: #FFDC40;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+}
+
+.containerBody {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.TDL {
+    font-family: Roboto, sans-serif;
+    font-size: 30px;
+    font-weight: 900;
+    line-height: 30px;
+
+}
+
+.siralama {
+    width: 25px;
+    height: 30px;
+    margin-left: 290px;
+    margin-bottom: 5px;
+
+}
+
+.containerDivInput {
+    border: 1px solid #C4C4C4;
+    width: 330px;
+    
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 25px 0 10px;
+    font-family: Roboto, sans-serif;
+    margin:10px;
+}
+
+.containerInput {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-family: Roboto, sans-serif;
+    width: 300px;
+    padding:10px;
+    
+}
+
+.containerImgInput {
+    width: 22px;
+}
+
+.containerInput:active {
+    box-shadow: none;
+    transform: translateY(2px)
+}
+
+.btnimg1 {
+    background-color: transparent;
+    border: none;
+    
+}
+
+.btnimg1:active {
+    box-shadow: none;
+    transform: translateY(2px)
+}
+
+.plus {
+    width: 40px;
+    height: 40px;
+    border-radius: 100px;
+    position: absolute;
+    top: 27px;
+    left: 6px;
+    background-color: transparent;
+    border: none;
+}
+
+.btnimg {
+    background-color: transparent;
+    border: none;
+    margin-top: 25px;
+}
+
+.btnimg:active {
+    box-shadow: none;
+    transform: translateY(2px);
+}
+
+.btnZindex {
+    position: relative;
+}
+.newOl{
+      display: flex;
+    flex-direction: column;
+    width: 300px;
+    padding-left: 0; 
+    margin-left: 0px;
+    font-size: 20px;
+    font-weight: 400;
+}
+li {
+    padding-left: 0; 
+    margin-left: 0; 
+    margin-bottom: 10px; 
+}
+li{
+    display: flex;
+    justify-content: space-between;
+    margin-right: 30px;
+}
+.yeniXimg{
+    width: 25px;
+
+}
+.newDiv{
+    width: 400px;
+   
+    
+}
+.buttonn{
+    margin-bottom: 20px ;
+}
+.newDiv1{
+    border: 1px solid #C4C4C4;
+    width: 330px;
+    
+    border-radius: 10px;
+    display: flex;
+    margin: 10px 0 10px 35px;
+    
+    font-family: Roboto, sans-serif;
+}
+.newOl1{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 300px;
+    padding-left: 0; 
+    margin-left: 20px;
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 0px;
+}
+
+ol{
+    counter-reset: deyisme;
+}
+li{
+    counter-increment: deyisme;
+    list-style-position: inside;
+    
+
+}
+li::before{
+    content: counter(deyisme) ".";
+
+}
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 30px;
+    text-align: left;
+}
+
+.newOl li {
+    justify-content: flex-start;
+}
+
+.newOl li .yeniXimg {
+    margin-left: auto;
+}
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 30px;
+    text-align: left;
+    word-break: break-all;
+}
+
+.newOl1 li {
+    justify-content: flex-start;
+}
+
+.newOl1 li .yeniXimg {
+    margin-left: auto;
+}
+
+.container{
+    padding-bottom: 5px;
+}
+.btnZindex{
+    margin-left:115px;
+}
